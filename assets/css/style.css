@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jersey+10&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.cursor {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    background: url('https://img.icons8.com/?size=80&id=ZTrLkDrCoV0o&format=png') center/contain no-repeat;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    min-height: 100vh; /* Para preencher toda a tela em dispositivos de tela pequena */
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 100%
+}
+
+.profiles-container {
+    position: absolute;
+    top: 12%; /* Inicia 20% do topo da tela */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.profile {
+    position: relative; 
+    color: #fff;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #1f1f1f 250%);
+    box-shadow: 2px 3px 30px rgba(0, 0, 0, .05);
+    border-radius: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    width: 16rem; 
+    height: 18rem;
+}
+
+.barra {
+    width: 50%;
+    height: 4px;
+    background: rgb(247, 246, 246);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 0 0 10px 10px
+}
+
+.img-avatar {
+    width: 4.5rem;
+    border-radius: 50%;
+    position: relative;
+    display: inline-block;
+}
+
+.img-status {
+    width: 1.4rem;
+    position: absolute;
+    bottom: 12rem;
+    right: 5.6rem;
+    background-color: #000;
+    border-radius: 50%;
+    border: 2px solid #141414;
+}
+
+h2 {
+    margin-top: 2rem;
+}
+
+h2, p {
+    font-size: 1rem;
+}
+
+.img-icons {
+    padding: 1.4rem;
+    width: 2rem;
+    height: 2rem;
+    max-width: 100%;
+    max-height: 100%;
+    transition: 0.5s;
+}
+
+  
+
+.img-icons:hover {
+    transform: scale(1.15);
+}
+.light {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.514) 10%, rgba(255,255,255,0) 100%);
+    pointer-events: none;
+    mix-blend-mode: screen;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    border-radius: 8px;
+}
+#overlay-toggle {
+    position: absolute;
+    display: none
+}
+
+.overlay {
+    z-index: 1;
+    background-color: #000001
+}
+
+.overlay label {
+    display: grid;
+    place-items: center;
+    width: 100vw;
+    height: 100vw;
+    color: #fff;
+    font-size: 2rem
+}
+
+.no-hover {
+    display: block
+}
+
+.fullscreen {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-height: 100vh;
+    min-width: 100vw
+}
+
+body {
+    background-color: #000001 !important;
+    color: #fff !important
+}
+
+.img-nitro {
+    width: 1.75rem;
+}
+.img-insignia {
+    width: 1.5rem;
+    margin-bottom: 2px;
+}
+.isng {
+    margin-top: 12px;
+}
+
+.hover {
+    text-decoration: none;
+    color: gray !important;
+    transition: .4s !important
+}
+
+.hover:hover {
+    transition: .4s !important;
+    color: #fff !important
+}
+
+#overlay-toggle:checked~.overlay {
+    animation-fill-mode: forwards;
+    animation-name: fade, hide;
+    animation-delay: 0s, 600ms;
+    animation-duration: 600ms, 1ms
+}
+
+#overlay-toggle:checked~.overlay label {
+    animation-fill-mode: forwards;
+    animation-name: fade;
+    animation-delay: 0s;
+    animation-duration: 500ms
+}
+@media(hover:hover) {
+    .overlayhover {
+        display: block
+    }
+
+    .overlayno-hover {
+        display: none
+    }
+}
+
+@keyframes fade {
+    to {
+        opacity: 0
+    }
+}
+
+@keyframes hide {
+    to {
+        visibility: hidden
+    }
+}
